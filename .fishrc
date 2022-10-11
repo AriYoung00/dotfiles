@@ -1,0 +1,61 @@
+# Aliases
+alias gpg "gpg2"
+alias nano "vim"
+alias cd.. "cd .."
+alias pls "sudo"
+alias gfx "supergfxctl"
+
+# alias vim "nvim"
+alias rvim "/bin/vim"
+alias pipenv "python3 -m pipenv"
+alias cat bat
+
+# alias ls "lsd"
+alias ls "exa --icons"
+alias la "lsd -lAh"
+alias lt "lsd --tree"
+alias copy "xclip -selection clipboard"
+
+# Teehee
+alias rustupdate "rustup update"
+
+# Bass for some env stuff
+# bass "eval \$(/opt/homebrew/bin/brew shellenv)"
+bass "source $HOME/.cargo/env"
+
+# Iinitialize starfish
+starship init fish | source
+
+# gh CLI completions
+gh completion -s fish | source
+
+# esp-idf setup
+# bass source /home/ariel/esp/esp-idf/export.sh
+
+# Set core count
+set -x NUM_CPU 16
+# Change default editors
+set -x EDITOR "vim"
+set -x GIT_EDITOR "vim"
+
+# Cowsay fortune greeting
+set BLOO '\033[1;36m'
+set NC '\033[0m'
+function fish_greeting
+#    printf "$BLOO"
+    fortune -a | cowsay -W 50 | lolcat
+    printf "$NC\n"
+end
+
+# The fuck?
+function fuck -d "Correct your previous console command"
+  set -l fucked_up_command $history[1]
+  env TF_ALIAS=fuck PYTHONIOENCODING=utf-8 thefuck $fucked_up_command | read -l unfucked_command
+  if [ "$unfucked_command" != "" ]
+    eval $unfucked_command
+    history --delete $fucked_up_command
+    history --merge ^ /dev/null
+  end
+end
+
+# Tiff was here ^-^
