@@ -1,0 +1,94 @@
+#format = """$time$all$directory$character"""
+
+# replace default shell symbol with a different one
+[character]
+# other prompt possibilities:
+#   hello   hello    hello  hello 
+success_symbol = "[ ]()"
+error_symbol = "[💥]()"
+
+[directory]
+truncation_length=9
+read_only = " "
+
+[battery]
+format = "[$symbol]()"
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+format = "at [$time]($style) "
+
+[[battery.display]]
+threshold = 30
+style = "normal yellow"
+discharging_symbol = ""
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
